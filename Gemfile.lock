@@ -1,12 +1,16 @@
-PATH
-  remote: ../../mn/pubid
+GIT
+  remote: https://github.com/metanorma/pubid.git
+  revision: 3f3bf82768d55131f92c04481089376cff009bd8
+  branch: feat/adobe-flavor
   specs:
     pubid (2.0.0.pre.alpha.8)
       lutaml-model
       parslet
 
-PATH
-  remote: ../relaton
+GIT
+  remote: https://github.com/relaton/relaton.git
+  revision: 7d6772f229057a2627b8728f90435ee659f09ac2
+  branch: feat/adobe-flavor
   specs:
     relaton (3.0.0.pre.alpha.1)
       addressable (~> 2.8)
@@ -140,7 +144,7 @@ GEM
       thor
     iso639 (1.3.3)
     isoics (0.1.13)
-    json (2.20.0)
+    json (2.21.0)
     latex-decode (0.4.2)
     liquid (5.13.0)
       bigdecimal
@@ -363,7 +367,7 @@ CHECKSUMS
   ieee-idams (0.3.0) sha256=a63b76e44f128b5cd6042fdda9d535a83a9a8cbed435192d59b75e3cfd99cbdf
   iso639 (1.3.3) sha256=ba9ec9df124b250dbc21b8d4dc74266a0d06fc58e25104916b1864b14b8f1eac
   isoics (0.1.13) sha256=57d3a1e30817e03fe8e2442bf62ec5b17e101bae0eea2c0f507030fe834c7482
-  json (2.20.0) sha256=9362bc6e55a952b056abf9167cf053358181c904cb70cd6eee0808ea830fc32b
+  json (2.21.0) sha256=8de199e53f93450414b9fd49811012a73f3e3265b60468c7274d1cacebde1969
   latex-decode (0.4.2) sha256=e85633406e315e348e0ca6de231dee1bf45a22496b0866059c635f7502c2a592
   liquid (5.13.0) sha256=09d594fd96b98e19a8fd5c32aadcc6950df429b69f48c2f774c0db0ce272bf19
   loc_mods (0.3.0) sha256=b261f560891119815ce735b6ff0f54607d2e6b13721708a3f01789c2f46dc106

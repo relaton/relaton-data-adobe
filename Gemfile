@@ -8,15 +8,19 @@ source "https://rubygems.org"
 gem "psych", "~> 5.2.6"
 
 # relaton is the single combined v3 gem. The Adobe flavor lives inside
-# it at lib/relaton/adobe/. Path: during development; flip to
-#   git: "https://github.com/relaton/relaton.git", branch: "main"
-# once the Adobe flavor PR (relaton/relaton#NN) merges.
-gem "relaton", path: "../relaton"
+# it at lib/relaton/adobe/. Pinned to the feat/adobe-flavor branch in
+# relaton/relaton#56 until that PR merges, then flip back to main.
+gem "relaton",
+    git: "https://github.com/relaton/relaton.git",
+    branch: "feat/adobe-flavor"
 
 # pubid v2 (with Adobe support) parses primary docids into structured
-# identifiers for the pubid_class-based index-v2.yaml. Tracks the
-# rt-new-lutaml-model branch until pubid v2 is released.
-gem "pubid", path: "../../mn/pubid"
+# identifiers for the pubid_class-based index-v2.yaml. Pinned to the
+# feat/adobe-flavor branch in metanorma/pubid#107 until that PR merges,
+# then flip back to rt-new-lutaml-model or main.
+gem "pubid",
+    git: "https://github.com/metanorma/pubid.git",
+    branch: "feat/adobe-flavor"
 
 gem "thor",              "~> 1.3"
 gem "nokogiri"
