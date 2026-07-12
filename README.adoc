@@ -1,0 +1,8 @@
+= relaton-data-adobe
+
+Bibliographic dataset of Adobe publications in Relaton YAML format.
+
+Initial scope: Adobe Type Tools font tech notes
+(https://github.com/adobe-type-tools/font-tech-notes).
+
+See CLAUDE.md for architecture and TODO.impl/ for the roadmap.
