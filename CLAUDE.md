@@ -223,8 +223,10 @@ bundle exec rspec spec/                              # run specs (74 examples, n
 file) and `index-v2.yaml` (structured `Pubid::Adobe` identifier →
 file, `pubid_class: Pubid::Adobe::Identifier`). Calls `remove_all`
 first; both indexes are **rebuilt from scratch each run**. v1 sorted
-by filename; v2 sorted by pubid. The `relaton/support` crawler
-workflow zips each `index*.yaml` into `index*.zip` and commits both.
+by filename; v2 sorted by pubid. `crawler.rb` then calls
+`AdobeFetcher::Indexer.zip` to compress each `index*.yaml` into a
+sibling `index*.zip` (the yaml stored at its bare basename); the
+`relaton/support` crawler workflow commits both.
 
 `check_data.rb` round-trips every YAML through
 `Relaton::Adobe::Item.from_yaml` → `to_yaml` and diffs against the

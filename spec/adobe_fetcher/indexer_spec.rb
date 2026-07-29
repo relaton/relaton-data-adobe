@@ -3,6 +3,7 @@
 require "spec_helper"
 require "tmpdir"
 require "yaml"
+require "zip"
 
 RSpec.describe AdobeFetcher::Indexer do
   let(:data_dir) { Dir.mktmpdir("adobe-index-data") }
@@ -94,6 +95,28 @@ RSpec.describe AdobeFetcher::Indexer do
       .to output(/no docidentifier/).to_stderr
   end
 
+  it "zips each index into a sibling .zip holding the yaml at its basename" do
+    File.write(index_file, "--- []\n", encoding: "UTF-8")
+    File.write(index_v2_file, "--- v2\n", encoding: "UTF-8")
+
+    described_class.zip(index_file, index_v2_file)
+
+    [index_file, index_v2_file].each do |yaml|
+      expect(zip_entries(yaml.sub(/\.yaml\z/, ".zip")))
+        .to eq(File.basename(yaml) => File.read(yaml, encoding: "UTF-8"))
+    end
+  end
+
+  it "rebuilds the zip cleanly when run again (no duplicate-entry error)" do
+    File.write(index_file, "--- []\n", encoding: "UTF-8")
+    described_class.zip(index_file)
+    File.write(index_file, "--- [changed]\n", encoding: "UTF-8")
+
+    expect { described_class.zip(index_file) }.not_to raise_error
+    expect(zip_entries(index_file.sub(/\.yaml\z/, ".zip")))
+      .to eq("index-v1.yaml" => "--- [changed]\n")
+  end
+
   def write_yaml(stem)
     hash = {
       "id" => stem.upcase,
@@ -126,5 +149,12 @@ RSpec.describe AdobeFetcher::Indexer do
   def index_v2_by_type
     entries = YAML.safe_load(File.read(index_v2_file, encoding: "UTF-8"), permitted_classes: [Symbol])
     entries.each_with_object({}) { |e, h| h[e[:id]["_type"]] = e }
+  end
+
+  # { entry_name => content } for every member of a zip archive.
+  def zip_entries(zip_path)
+    Zip::File.open(zip_path).each_with_object({}) do |entry, h|
+      h[entry.name] = entry.get_input_stream.read
+    end
   end
 end

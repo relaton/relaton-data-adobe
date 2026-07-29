@@ -25,6 +25,7 @@ gem "thor",              "~> 1.3"
 gem "nokogiri"
 gem "net-http-persistent"
 gem "activesupport", require: false   # String#squish for abstract cleaning
+gem "rubyzip",           "~> 2.3"     # crawler.rb compresses index*.yaml → index*.zip
 
 group :development, :test do
   gem "rspec", "~> 3.13"

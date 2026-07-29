@@ -3,6 +3,7 @@
 require "relaton/index"
 require "relaton/bib"
 require "relaton/adobe"
+require "zip"
 
 module AdobeFetcher
   # Builds the docid → file-path index over data/*.yaml using
@@ -51,6 +52,23 @@ module AdobeFetcher
       idx.save
       idx2&.save
       [idx, idx2]
+    end
+
+    # Compress each index YAML into a sibling `<name>.zip` (e.g.
+    # index-v1.yaml → index-v1.zip). The archive stores the file at its
+    # bare basename, matching the released index*.zip layout the relaton
+    # consumer expects. Rebuilt from scratch each run (any stale zip is
+    # removed first) so re-running never raises a duplicate-entry error.
+    #
+    # @param index_files [Array<String>] paths to the index YAML files
+    def zip(*index_files)
+      index_files.compact.each do |yaml|
+        zip_path = "#{yaml.chomp(".yaml")}.zip"
+        File.delete(zip_path) if File.exist?(zip_path)
+        Zip::File.open(zip_path, create: true) do |archive|
+          archive.add(File.basename(yaml), yaml)
+        end
+      end
     end
 
     def clean_index(file:, pubid_class: nil)
