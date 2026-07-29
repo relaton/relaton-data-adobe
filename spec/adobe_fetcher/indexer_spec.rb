@@ -2,6 +2,7 @@
 
 require "spec_helper"
 require "tmpdir"
+require "yaml"
 
 RSpec.describe AdobeFetcher::Indexer do
   let(:data_dir) { Dir.mktmpdir("adobe-index-data") }
@@ -67,6 +68,26 @@ RSpec.describe AdobeFetcher::Indexer do
     expect(v2).to include("adobe-glyph-list")
   end
 
+  it "builds v1 and v2 together, with structured pubid ids keyed to files" do
+    write_yaml("atn5014")
+    write_publication("adobe-glyph-list", "Adobe Glyph List")
+
+    described_class.build(
+      data_dir: data_dir, index_file: index_file, index_v2_file: index_v2_file,
+    )
+
+    # Both flavours are written in one pass — no pool/file collision.
+    expect(File).to exist(index_file)
+    by_type = index_v2_by_type
+
+    expect(by_type.fetch("pubid:adobe:tech-note")).to match(
+      id: include("number" => "5014"), file: end_with("atn5014.yaml"),
+    )
+    expect(by_type.fetch("pubid:adobe:publication")).to match(
+      id: include("slug" => "adobe-glyph-list"), file: end_with("adobe-glyph-list.yaml"),
+    )
+  end
+
   it "warns and continues when a file has no docidentifier" do
     store.write("broken", { "type" => "standard", "title" => [] })
     expect { described_class.build(data_dir: data_dir, index_file: index_file) }
@@ -85,5 +106,25 @@ RSpec.describe AdobeFetcher::Indexer do
       "ext" => { "doctype" => { "content" => "tech-note" }, "flavor" => "adobe" },
     }
     store.write(stem, hash)
+  end
+
+  # A named publication: docid.content is the title-based citation, but
+  # id is the slug that Pubid::Adobe parses for index-v2.
+  def write_publication(slug, title)
+    store.write(slug, {
+      "id" => slug,
+      "type" => "standard",
+      "title" => [{ "language" => "eng", "content" => title, "type" => "main" }],
+      "docidentifier" => [{
+        "content" => "Adobe Publication #{title}", "type" => "ADOBE", "primary" => true,
+      }],
+      "ext" => { "doctype" => { "content" => "publication" }, "flavor" => "adobe" },
+    })
+  end
+
+  # index-v2 entries keyed by their pubid `_type`.
+  def index_v2_by_type
+    entries = YAML.safe_load(File.read(index_v2_file, encoding: "UTF-8"), permitted_classes: [Symbol])
+    entries.each_with_object({}) { |e, h| h[e[:id]["_type"]] = e }
   end
 end

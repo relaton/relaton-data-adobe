@@ -238,7 +238,7 @@ hack**.
 gem "psych", "~> 5.2.6"   # 5.3.0 breaks YAML round-trip
 gem "relaton", git: "https://github.com/relaton/relaton.git", branch: "main"
 gem "pubid",   git: "https://github.com/metanorma/pubid.git",
-               branch: "rt-new-lutaml-model"
+               branch: "main"   # Adobe flavor (pubid#107) is merged to main
 gem "thor", "~> 1.3"
 gem "nokogiri"
 gem "net-http-persistent"

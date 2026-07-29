@@ -15,12 +15,11 @@ gem "relaton",
     branch: "feat/adobe-flavor"
 
 # pubid v2 (with Adobe support) parses primary docids into structured
-# identifiers for the pubid_class-based index-v2.yaml. Pinned to the
-# feat/adobe-flavor branch in metanorma/pubid#107 until that PR merges,
-# then flip back to rt-new-lutaml-model or main.
+# identifiers for the pubid_class-based index-v2.yaml. The Adobe flavor
+# (metanorma/pubid#107) is merged, so track pubid main.
 gem "pubid",
     git: "https://github.com/metanorma/pubid.git",
-    branch: "feat/adobe-flavor"
+    branch: "main"
 
 gem "thor",              "~> 1.3"
 gem "nokogiri"
