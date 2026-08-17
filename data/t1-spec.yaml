@@ -1,0 +1,39 @@
+---
+id: t1-spec
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Type 1 Specifications                6/21/90     final                          front.legal.doc
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/T1_SPEC.pdf
+docidentifier:
+- content: Adobe Publication t1-spec
+  type: ADOBE
+  primary: true
+docnumber: t1-spec
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:t1-spec
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/T1_SPEC.pdf
+  source_repo_path: pdfs/T1_SPEC.pdf
+  publication_slug: t1-spec
