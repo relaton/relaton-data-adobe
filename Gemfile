@@ -8,11 +8,10 @@ source "https://rubygems.org"
 gem "psych", "~> 5.2.6"
 
 # relaton is the single combined v3 gem. The Adobe flavor lives inside
-# it at lib/relaton/adobe/. Pinned to the feat/adobe-flavor branch in
-# relaton/relaton#56 until that PR merges, then flip back to main.
+# it at lib/relaton/adobe/ (merged to main via relaton/relaton#56).
 gem "relaton",
     git: "https://github.com/relaton/relaton.git",
-    branch: "feat/adobe-flavor"
+    branch: "main"
 
 # pubid v2 (with Adobe support) parses primary docids into structured
 # identifiers for the pubid_class-based index-v2.yaml. The Adobe flavor
