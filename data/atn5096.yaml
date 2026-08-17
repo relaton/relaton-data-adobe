@@ -1,0 +1,52 @@
+---
+id: ATN5096
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: "®"
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5096.BarCode_Vendors.pdf
+docidentifier:
+- content: Adobe TN 5096
+  type: ADOBE
+  primary: true
+docnumber: '5096'
+date:
+- type: published
+  from: '1998-09-25'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+version:
+- content: '1998-09-25'
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '1998'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5096
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5096.BarCode_Vendors.pdf
+  tech_note_number: '5096'
+  source_repo_path: pdfs/5096.BarCode_Vendors.pdf

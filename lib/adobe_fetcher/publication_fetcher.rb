@@ -181,7 +181,9 @@ module AdobeFetcher
     def apply_edition!(hash, edition)
       return unless edition
 
-      hash["edition"] = [{ "content" => edition }]
+      # Relaton::Bib::Edition is a singular model (number/content), not
+      # a collection — an array here fails Item.from_yaml.
+      hash["edition"] = { "content" => edition }
     end
 
     def apply_copyright!(hash, date)

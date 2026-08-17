@@ -1,0 +1,52 @@
+---
+id: ATN5094
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: a
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5094.CJK_CID.pdf
+docidentifier:
+- content: Adobe TN 5094
+  type: ADOBE
+  primary: true
+docnumber: '5094'
+date:
+- type: published
+  from: '2007-02-28'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+version:
+- content: '2007-02-28'
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '2007'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5094
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5094.CJK_CID.pdf
+  tech_note_number: '5094'
+  source_repo_path: pdfs/5094.CJK_CID.pdf

@@ -1,0 +1,52 @@
+---
+id: ATN5174
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: CID-Keyed Font Installation
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5174.CID_PS.pdf
+docidentifier:
+- content: Adobe TN 5174
+  type: ADOBE
+  primary: true
+docnumber: '5174'
+date:
+- type: published
+  from: '1996-08-28'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+version:
+- content: '1996-08-28'
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '1996'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5174
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5174.CID_PS.pdf
+  tech_note_number: '5174'
+  source_repo_path: pdfs/5174.CID_PS.pdf

@@ -1,0 +1,39 @@
+---
+id: ATN5149
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Adobe Enterprise & Developer Support
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5149.OTFname_Tutorial.pdf
+docidentifier:
+- content: Adobe TN 5149
+  type: ADOBE
+  primary: true
+docnumber: '5149'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5149
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5149.OTFname_Tutorial.pdf
+  tech_note_number: '5149'
+  source_repo_path: pdfs/5149.OTFname_Tutorial.pdf

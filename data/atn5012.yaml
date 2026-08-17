@@ -1,0 +1,52 @@
+---
+id: ATN5012
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: The Type 42 Font
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5012.Type42_Spec.pdf
+docidentifier:
+- content: Adobe TN 5012
+  type: ADOBE
+  primary: true
+docnumber: '5012'
+date:
+- type: published
+  from: '1998-07-31'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+version:
+- content: '1998-07-31'
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '1998'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5012
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5012.Type42_Spec.pdf
+  tech_note_number: '5012'
+  source_repo_path: pdfs/5012.Type42_Spec.pdf
