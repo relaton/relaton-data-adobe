@@ -1,0 +1,52 @@
+---
+id: ATN5900
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: AFDKO Version 2.0
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5900.RFMFAH_Tutorial.pdf
+docidentifier:
+- content: Adobe TN 5900
+  type: ADOBE
+  primary: true
+docnumber: '5900'
+date:
+- type: published
+  from: '2007-02-21'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+version:
+- content: '2007-02-21'
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '2007'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5900
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5900.RFMFAH_Tutorial.pdf
+  tech_note_number: '5900'
+  source_repo_path: pdfs/5900.RFMFAH_Tutorial.pdf

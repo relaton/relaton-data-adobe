@@ -50,7 +50,8 @@ module AdobeFetcher
     private
 
     def build_sources(names, clone:)
-      names = names.map(&:to_s)
+      # Thor gives nil for an unset repeatable option, not [].
+      names = Array(names).map(&:to_s)
       available = available_sources(clone: clone)
       selected = names.empty? ? available.values : names.filter_map { |n| available[n] }
       selected

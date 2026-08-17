@@ -1,0 +1,54 @@
+---
+id: ATN5176
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: The Compact Font Format
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5176.CFF.pdf
+docidentifier:
+- content: Adobe TN 5176
+  type: ADOBE
+  primary: true
+docnumber: '5176'
+date:
+- type: published
+  from: '2003-12-04'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+edition:
+  content: '1.0'
+version:
+- content: '2003-12-04'
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '2003'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5176
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5176.CFF.pdf
+  tech_note_number: '5176'
+  source_repo_path: pdfs/5176.CFF.pdf

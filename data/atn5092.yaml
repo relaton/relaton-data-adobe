@@ -1,0 +1,52 @@
+---
+id: ATN5092
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: "®"
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5092.CID_Overview.pdf
+docidentifier:
+- content: Adobe TN 5092
+  type: ADOBE
+  primary: true
+docnumber: '5092'
+date:
+- type: published
+  from: '1994-09-12'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+version:
+- content: '1994-09-12'
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '1994'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5092
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5092.CID_Overview.pdf
+  tech_note_number: '5092'
+  source_repo_path: pdfs/5092.CID_Overview.pdf

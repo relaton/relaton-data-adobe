@@ -1,0 +1,39 @@
+---
+id: ATN5902
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: 'bc      Adobe Enterprise & Developer Support Adobe Technical Note #5902'
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/font-tech-notes/raw/main/pdfs/5902.AdobePSNameGeneration.pdf
+docidentifier:
+- content: Adobe TN 5902
+  type: ADOBE
+  primary: true
+docnumber: '5902'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5902
+  webpage: https://github.com/adobe-type-tools/font-tech-notes/blob/main/pdfs/5902.AdobePSNameGeneration.pdf
+  tech_note_number: '5902'
+  source_repo_path: pdfs/5902.AdobePSNameGeneration.pdf
