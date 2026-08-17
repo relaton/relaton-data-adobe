@@ -1,5 +1,13 @@
 ---
 - :id:
+    _type: pubid:adobe:publication
+    slug: acrobat-dc-font-policies
+  :file: data/acrobat-dc-font-policies.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: t1-spec
+  :file: data/t1-spec.yaml
+- :id:
     _type: pubid:adobe:tech-note
     number: '0091'
   :file: data/atn0091.yaml

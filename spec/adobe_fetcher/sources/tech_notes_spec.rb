@@ -14,6 +14,9 @@ RSpec.describe AdobeFetcher::Sources::TechNotes do
     end
     # An unrecognized shape: must be skipped, not fatal.
     FileUtils.touch(File.join(pdfs, "README.md"))
+    # Unnumbered notes become slug-keyed publications.
+    FileUtils.touch(File.join(pdfs, "AcrobatDC_FontPolicies.pdf"))
+    FileUtils.touch(File.join(pdfs, "T1_SPEC.pdf"))
 
     # Real local git remote + tracking branch so ensure_clone's
     # pull-on-existing path runs offline.
@@ -34,11 +37,15 @@ RSpec.describe AdobeFetcher::Sources::TechNotes do
     FileUtils.rm_rf(@remote_dir)
   end
 
-  it "yields one entry per recognized PDF, sorted by number" do
+  it "yields numbered entries with number+slug, then unnumbered ones as publications" do
     entries = described_class.new(clone_dir: clone_dir).each_entry.to_a
 
-    expect(entries.map(&:number)).to eq(%w[5014 5902])
-    expect(entries.map(&:slug)).to eq(%w[CIDFont_Spec AdobePSNameGeneration])
+    numbered, unnumbered = entries.partition(&:number)
+    expect(numbered.map(&:slug)).to eq(%w[CIDFont_Spec AdobePSNameGeneration])
+    expect(unnumbered.map(&:number)).to eq([nil, nil])
+    # Kebab-case slugs, the shape Pubid::Adobe publications round-trip.
+    expect(unnumbered.map(&:slug))
+      .to eq(%w[acrobat-dc-font-policies t1-spec])
   end
 
   it "carries the pdfs/ repo path and web links" do

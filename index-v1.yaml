@@ -1,4 +1,6 @@
 ---
+- :id: Adobe Publication acrobat-dc-font-policies
+  :file: data/acrobat-dc-font-policies.yaml
 - :id: Adobe TN 0091
   :file: data/atn0091.yaml
 - :id: Adobe TN 5004
@@ -57,3 +59,5 @@
   :file: data/atn5901.yaml
 - :id: Adobe TN 5902
   :file: data/atn5902.yaml
+- :id: Adobe Publication t1-spec
+  :file: data/t1-spec.yaml
