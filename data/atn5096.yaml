@@ -4,7 +4,7 @@ schema_version: v1.5.6
 type: standard
 title:
 - language: eng
-  content: "®"
+  content: "BarCode Vendors"
   type: main
 source:
 - type: website
