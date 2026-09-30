@@ -4,7 +4,7 @@ schema_version: v1.5.6
 type: standard
 title:
 - language: eng
-  content: The Type 42 Font
+  content: "Type42 Spec"
   type: main
 source:
 - type: website
