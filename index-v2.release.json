@@ -1,11 +1,11 @@
 {
   "version": 1,
   "index": "index-v2",
-  "sha256": "86217420b63eecde843f99dc9b4cff8b510abace564b3c8c10c5042e00e5b942",
-  "bytes": 589,
-  "count": 41,
-  "generated": "2026-11-23T06:17:18Z",
-  "source_revision": "81ae2d6dfba2859f2abeeaf0bfa2ec2e95b72d18",
-  "run_id": "45122979810",
+  "sha256": "41fe71ce67535bce022e10ac40097c60575ecd26c04fc4c4ec3e8aed2f3d3f8b",
+  "bytes": 748,
+  "count": 52,
+  "generated": "2026-11-23T09:06:55Z",
+  "source_revision": "3e97517b97c05955449a3d41daa924d8da003408",
+  "run_id": "45143933260",
   "repository": "relaton/relaton-data-adobe"
 }

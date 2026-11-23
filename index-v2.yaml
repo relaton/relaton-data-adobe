@@ -23,8 +23,63 @@
   :file: data/adobe-japan1-7.yaml
 - :id:
     _type: pubid:adobe:publication
+    slug: pdf-reference
+    version: '1.0'
+  :file: data/pdf-reference-1.0.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: pdf-reference
+    version: '1.2'
+  :file: data/pdf-reference-1.2.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: pdf-reference
+    version: '1.3'
+  :file: data/pdf-reference-1.3.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: pdf-reference
+    version: '1.4'
+  :file: data/pdf-reference-1.4.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: pdf-reference
+    version: '1.5'
+  :file: data/pdf-reference-1.5.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: pdf-reference
+    version: '1.6'
+  :file: data/pdf-reference-1.6.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: pdf-reference
+    version: '1.7'
+  :file: data/pdf-reference-1.7.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: pdf-signature-build-dictionary
+    version: '1.4'
+  :file: data/pdf-signature-build-dictionary-1.4.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: postscript-language-reference
+    version: '3.0'
+  :file: data/postscript-language-reference-3.0.yaml
+- :id:
+    _type: pubid:adobe:publication
     slug: t1-spec
   :file: data/t1-spec.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: tiff
+    version: '6.0'
+  :file: data/tiff-6.0.yaml
+- :id:
+    _type: pubid:adobe:publication
+    slug: xfa
+    version: '3.3'
+  :file: data/xfa-3.3.yaml
 - :id:
     _type: pubid:adobe:tech-note
     number: '0091'
