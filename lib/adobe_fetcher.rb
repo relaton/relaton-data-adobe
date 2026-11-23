@@ -62,5 +62,7 @@ module AdobeFetcher
   module Sources
     autoload :Base,             "adobe_fetcher/sources/base"
     autoload :TechNotes,        "adobe_fetcher/sources/tech_notes"
+    autoload :PdfStandards,     "adobe_fetcher/sources/pdf_standards"
+    autoload :NormRefs,         "adobe_fetcher/sources/norm_refs"
   end
 end

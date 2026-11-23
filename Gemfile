@@ -24,7 +24,10 @@ gem "thor",              "~> 1.3"
 gem "nokogiri"
 gem "net-http-persistent"
 gem "activesupport", require: false   # String#squish for abstract cleaning
-gem "rubyzip",           "~> 2.3"     # crawler.rb compresses index*.yaml → index*.zip
+# relaton main depends on rubyzip ~> 3.7 (relaton#264); match it —
+# crawler.rb compresses index*.yaml → index*.zip. The old ~> 2.3 pin
+# conflicts with relaton main and broke the daily crawl (2026-11).
+gem "rubyzip",           "~> 3.7"
 
 group :development, :test do
   gem "rspec", "~> 3.13"

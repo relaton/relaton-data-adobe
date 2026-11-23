@@ -1,0 +1,49 @@
+---
+id: ATN5044
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Color Separation Conventions for PostScript Language Programs
+  type: main
+source:
+- type: website
+  content: https://printtechnologies.org/standards/files/technote5044.pdf
+docidentifier:
+- content: Adobe TN 5044
+  type: ADOBE
+  primary: true
+docnumber: '5044'
+date:
+- type: published
+  from: 1996-05
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '1996'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5044
+  webpage: https://printtechnologies.org/standards/files/technote5044.pdf
+  tech_note_number: '5044'

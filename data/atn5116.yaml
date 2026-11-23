@@ -1,0 +1,49 @@
+---
+id: ATN5116
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Supporting the DCT Filters in PostScript Level 2
+  type: main
+source:
+- type: website
+  content: https://www.pdfa.org/norm-refs/5116.DCT_Filter.pdf
+docidentifier:
+- content: Adobe TN 5116
+  type: ADOBE
+  primary: true
+docnumber: '5116'
+date:
+- type: published
+  from: 1992-11
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '1992'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5116
+  webpage: https://www.pdfa.org/norm-refs/5116.DCT_Filter.pdf
+  tech_note_number: '5116'

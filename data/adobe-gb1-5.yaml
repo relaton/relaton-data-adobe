@@ -1,0 +1,38 @@
+---
+id: adobe-gb1-5
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Adobe-GB1-5 Character Collection for CID-Keyed Fonts
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/cmap-resources/raw/main/other-cmaps/adobe-gb1-5.cmap
+docidentifier:
+- content: Adobe Publication Adobe-GB1-5 Character Collection for CID-Keyed Fonts
+  type: ADOBE
+  primary: true
+docnumber: adobe-gb1
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:adobe-gb1:v5
+  webpage: https://github.com/adobe-type-tools/cmap-resources/raw/main/other-cmaps/adobe-gb1-5.cmap
+  publication_slug: adobe-gb1

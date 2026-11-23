@@ -1,0 +1,49 @@
+---
+id: tiff-6.0
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: TIFF, Revision 6.0
+  type: main
+source:
+- type: website
+  content: https://www.pdfa.org/norm-refs/TIFF6.pdf
+docidentifier:
+- content: Adobe Publication TIFF, Revision 6.0
+  type: ADOBE
+  primary: true
+docnumber: tiff
+date:
+- type: published
+  from: 1992-06
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '1992'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:tiff:v6.0
+  webpage: https://www.pdfa.org/norm-refs/TIFF6.pdf
+  publication_slug: tiff

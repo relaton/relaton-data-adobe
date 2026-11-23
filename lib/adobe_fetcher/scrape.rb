@@ -21,7 +21,7 @@ module AdobeFetcher
     def fetch
       sources = build_sources(options[:source], clone: options[:clone_dir])
       if sources.empty?
-        say "No sources selected. Available: tech-notes", :red
+        say "No sources selected. Available: tech-notes, pdf-standards, norm-refs", :red
         exit 1
       end
 
@@ -62,6 +62,8 @@ module AdobeFetcher
     def available_sources(clone:)
       {
         "tech-notes" => AdobeFetcher::Sources::TechNotes.new(clone_dir: clone),
+        "pdf-standards" => AdobeFetcher::Sources::PdfStandards.new,
+        "norm-refs" => AdobeFetcher::Sources::NormRefs.new,
       }
     end
   end

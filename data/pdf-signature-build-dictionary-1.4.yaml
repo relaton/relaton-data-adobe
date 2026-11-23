@@ -1,0 +1,49 @@
+---
+id: pdf-signature-build-dictionary-1.4
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: PDF Signature Build Dictionary Specification
+  type: main
+source:
+- type: website
+  content: https://www.pdfa.org/norm-refs/SigBuildDict.pdf
+docidentifier:
+- content: Adobe Publication PDF Signature Build Dictionary Specification
+  type: ADOBE
+  primary: true
+docnumber: pdf-signature-build-dictionary
+date:
+- type: published
+  from: 2008-03
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '2008'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:pdf-signature-build-dictionary:v1.4
+  webpage: https://www.pdfa.org/norm-refs/SigBuildDict.pdf
+  publication_slug: pdf-signature-build-dictionary
