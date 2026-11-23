@@ -1,0 +1,9 @@
+{
+  "repository": "relaton/relaton-data-adobe",
+  "workflow": "Crawler",
+  "run_id": "45122979810",
+  "run_attempt": "1",
+  "source_revision": "81ae2d6dfba2859f2abeeaf0bfa2ec2e95b72d18",
+  "crawler": "bundle exec ruby crawler.rb",
+  "crawled_at": "2026-11-23T06:17:18Z"
+}

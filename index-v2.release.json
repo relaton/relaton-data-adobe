@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "index": "index-v2",
+  "sha256": "86217420b63eecde843f99dc9b4cff8b510abace564b3c8c10c5042e00e5b942",
+  "bytes": 589,
+  "count": 41,
+  "generated": "2026-11-23T06:17:18Z",
+  "source_revision": "81ae2d6dfba2859f2abeeaf0bfa2ec2e95b72d18",
+  "run_id": "45122979810",
+  "repository": "relaton/relaton-data-adobe"
+}
