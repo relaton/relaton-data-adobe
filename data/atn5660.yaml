@@ -1,0 +1,49 @@
+---
+id: ATN5660
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Open Prepress Interface (OPI) Specification, Version 2.0
+  type: main
+source:
+- type: website
+  content: https://www.pdfa.org/norm-refs/5660_OPI_2_0.pdf
+docidentifier:
+- content: Adobe TN 5660
+  type: ADOBE
+  primary: true
+docnumber: '5660'
+date:
+- type: published
+  from: 2000-01
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '2000'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5660
+  webpage: https://www.pdfa.org/norm-refs/5660_OPI_2_0.pdf
+  tech_note_number: '5660'

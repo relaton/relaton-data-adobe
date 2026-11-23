@@ -1,0 +1,38 @@
+---
+id: adobe-glyph-list-for-new-fonts
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Adobe Glyph List for New Fonts
+  type: main
+source:
+- type: website
+  content: https://raw.githubusercontent.com/adobe-type-tools/agl-aglfn/main/AGLFN.txt
+docidentifier:
+- content: Adobe Publication Adobe Glyph List for New Fonts
+  type: ADOBE
+  primary: true
+docnumber: adobe-glyph-list-for-new-fonts
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:adobe-glyph-list-for-new-fonts
+  webpage: https://raw.githubusercontent.com/adobe-type-tools/agl-aglfn/main/AGLFN.txt
+  publication_slug: adobe-glyph-list-for-new-fonts

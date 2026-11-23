@@ -9,21 +9,23 @@ module AdobeFetcher
   # For Publications, the optional +title+ rides along so the
   # resulting Docid can render "Adobe Publication <title>" citations.
   class SourceEntry
-    attr_reader :number, :slug, :version, :title, :filename,
-                :absolute_path, :web_url, :bytes_url
+    attr_reader :number, :slug, :version, :title, :date, :filename,
+                :absolute_path, :web_url, :bytes_url, :source_repo_path
 
     # rubocop:disable Metrics/ParameterLists
     def initialize(number: nil, slug: nil, version: nil, title: nil,
-                   filename: nil, absolute_path: nil, web_url: nil,
-                   bytes_url: nil)
+                   date: nil, filename: nil, absolute_path: nil,
+                   web_url: nil, bytes_url: nil, source_repo_path: nil)
       @number        = number
       @slug          = slug
       @version       = version
       @title         = title
+      @date          = date
       @filename      = filename
       @absolute_path = absolute_path
       @web_url       = web_url
       @bytes_url     = bytes_url
+      @source_repo_path = source_repo_path
     end
     # rubocop:enable Metrics/ParameterLists
 

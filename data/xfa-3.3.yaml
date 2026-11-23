@@ -1,0 +1,49 @@
+---
+id: xfa-3.3
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: XML Forms Architecture (XFA) Specification
+  type: main
+source:
+- type: website
+  content: https://www.pdfa.org/norm-refs/XFA-3_3.pdf
+docidentifier:
+- content: Adobe Publication XML Forms Architecture (XFA) Specification
+  type: ADOBE
+  primary: true
+docnumber: xfa
+date:
+- type: published
+  from: 2012-01
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '2012'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:xfa:v3.3
+  webpage: https://www.pdfa.org/norm-refs/XFA-3_3.pdf
+  publication_slug: xfa

@@ -107,7 +107,9 @@ module AdobeFetcher
 
     def build_hash(entry, docid, cover)
       title_text = cover&.title || entry.title || title_case_slug(entry.slug) || docid.to_s
-      date = cover&.date
+      # A curated entry carries the citation date of record; a
+      # cover-page parse refines it when a PDF was fetched and parsed.
+      date = cover&.date || entry.date
       edition = cover&.edition
 
       hash = {
@@ -131,7 +133,7 @@ module AdobeFetcher
         "ext" => ext_block(entry, docid, cover),
       }
       apply_source!(hash, entry)
-      apply_dates!(hash, date)
+      apply_dates!(hash, date, versioned: !cover&.date.nil?)
       apply_edition!(hash, edition)
       apply_copyright!(hash, date)
       hash
@@ -160,7 +162,9 @@ module AdobeFetcher
       ext["urn"] = urn if urn && !urn.empty?
       ext["webpage"] = entry.web_url if entry.web_url
       ext["tech_note_number"] = docid.tech_note_number if docid.tech_note_number
-      ext["source_repo_path"] = "pdfs/#{entry.filename}" if entry.filename
+      repo_path = entry.source_repo_path ||
+                  ("pdfs/#{entry.filename}" if entry.filename)
+      ext["source_repo_path"] = repo_path if repo_path
       ext["publication_slug"] = docid.slug if docid.slug && !docid.typed
       ext
     end
@@ -171,11 +175,17 @@ module AdobeFetcher
       hash["source"] = [AdobeFetcher::Source.url(entry.bytes_url)]
     end
 
-    def apply_dates!(hash, date)
+    def apply_dates!(hash, date, versioned:)
       return unless date
 
-      hash["date"] = [{ "type" => "published", "from" => date.iso8601 }]
-      hash["version"] = [{ "content" => date.iso8601 }]
+      # Cover-page dates arrive as Date objects; curated citation dates
+      # arrive as strings that may be partial ("1992-09") — a partial
+      # citation date is correct as written and must not be day-filled.
+      value = date.respond_to?(:iso8601) ? date.iso8601 : date.to_s
+      hash["date"] = [{ "type" => "published", "from" => value }]
+      # The version face carries the cover date only (the font-tech-notes
+      # convention); a curated citation date is not a document version.
+      hash["version"] = [{ "content" => value }] if versioned
     end
 
     def apply_edition!(hash, edition)
@@ -187,10 +197,13 @@ module AdobeFetcher
     end
 
     def apply_copyright!(hash, date)
-      return unless date
+      # Cover-page dates arrive as Date objects; curated citation dates
+      # arrive as strings, possibly partial ("1992-09").
+      year = date.respond_to?(:year) ? date.year : date.to_s[/\A(\d{4})/, 1]
+      return unless year
 
       hash["copyright"] = [{
-        "from" => date.year.to_s,
+        "from" => year.to_s,
         "owner" => [{ "organization" => AdobeFetcher.adobe_org_hash }],
       }]
     end

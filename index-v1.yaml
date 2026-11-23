@@ -1,8 +1,18 @@
 ---
 - :id: Adobe Publication acrobat-dc-font-policies
   :file: data/acrobat-dc-font-policies.yaml
+- :id: Adobe Publication Adobe-GB1-5 Character Collection for CID-Keyed Fonts
+  :file: data/adobe-gb1-5.yaml
+- :id: Adobe Publication Adobe Glyph List for New Fonts
+  :file: data/adobe-glyph-list-for-new-fonts.yaml
+- :id: Adobe Publication Adobe Glyph List
+  :file: data/adobe-glyph-list.yaml
+- :id: Adobe Publication Adobe-Japan1-7 Character Collection for CID-Keyed Fonts
+  :file: data/adobe-japan1-7.yaml
 - :id: Adobe TN 0091
   :file: data/atn0091.yaml
+- :id: Adobe TN 5001
+  :file: data/atn5001.yaml
 - :id: Adobe TN 5004
   :file: data/atn5004.yaml
 - :id: Adobe TN 5005
@@ -19,6 +29,8 @@
   :file: data/atn5015.yaml
 - :id: Adobe TN 5040
   :file: data/atn5040.yaml
+- :id: Adobe TN 5044
+  :file: data/atn5044.yaml
 - :id: Adobe TN 5045
   :file: data/atn5045.yaml
 - :id: Adobe TN 5049
@@ -39,6 +51,8 @@
   :file: data/atn5096.yaml
 - :id: Adobe TN 5099
   :file: data/atn5099.yaml
+- :id: Adobe TN 5116
+  :file: data/atn5116.yaml
 - :id: Adobe TN 5149
   :file: data/atn5149.yaml
 - :id: Adobe TN 5174
@@ -51,13 +65,41 @@
   :file: data/atn5177.yaml
 - :id: Adobe TN 5180
   :file: data/atn5180.yaml
+- :id: Adobe TN 5411
+  :file: data/atn5411.yaml
 - :id: Adobe TN 5609
   :file: data/atn5609.yaml
+- :id: Adobe TN 5620
+  :file: data/atn5620.yaml
+- :id: Adobe TN 5660
+  :file: data/atn5660.yaml
 - :id: Adobe TN 5900
   :file: data/atn5900.yaml
 - :id: Adobe TN 5901
   :file: data/atn5901.yaml
 - :id: Adobe TN 5902
   :file: data/atn5902.yaml
+- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.0'
+  :file: data/pdf-reference-1.0.yaml
+- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.2'
+  :file: data/pdf-reference-1.2.yaml
+- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.3'
+  :file: data/pdf-reference-1.3.yaml
+- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.4'
+  :file: data/pdf-reference-1.4.yaml
+- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.5'
+  :file: data/pdf-reference-1.5.yaml
+- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.6'
+  :file: data/pdf-reference-1.6.yaml
+- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.7'
+  :file: data/pdf-reference-1.7.yaml
+- :id: Adobe Publication PDF Signature Build Dictionary Specification
+  :file: data/pdf-signature-build-dictionary-1.4.yaml
+- :id: Adobe Publication PostScript Language Reference, Third Edition
+  :file: data/postscript-language-reference-3.0.yaml
 - :id: Adobe Publication t1-spec
   :file: data/t1-spec.yaml
+- :id: Adobe Publication TIFF, Revision 6.0
+  :file: data/tiff-6.0.yaml
+- :id: Adobe Publication XML Forms Architecture (XFA) Specification
+  :file: data/xfa-3.3.yaml

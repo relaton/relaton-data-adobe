@@ -1,0 +1,38 @@
+---
+id: adobe-japan1-7
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Adobe-Japan1-7 Character Collection for CID-Keyed Fonts
+  type: main
+source:
+- type: website
+  content: https://github.com/adobe-type-tools/cmap-resources/raw/main/other-cmaps/adobe-japan1-7.cmap
+docidentifier:
+- content: Adobe Publication Adobe-Japan1-7 Character Collection for CID-Keyed Fonts
+  type: ADOBE
+  primary: true
+docnumber: adobe-japan1
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:adobe-japan1:v7
+  webpage: https://github.com/adobe-type-tools/cmap-resources/raw/main/other-cmaps/adobe-japan1-7.cmap
+  publication_slug: adobe-japan1

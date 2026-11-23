@@ -1,0 +1,49 @@
+---
+id: ATN5411
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: ToUnicode Mapping File Tutorial
+  type: main
+source:
+- type: website
+  content: https://www.pdfa.org/norm-refs/5411.ToUnicode.pdf
+docidentifier:
+- content: Adobe TN 5411
+  type: ADOBE
+  primary: true
+docnumber: '5411'
+date:
+- type: published
+  from: '2003-05-29'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '2003'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: tech-note
+  flavor: adobe
+  urn: urn:adobe:tech-note:5411
+  webpage: https://www.pdfa.org/norm-refs/5411.ToUnicode.pdf
+  tech_note_number: '5411'
