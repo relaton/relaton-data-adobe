@@ -3,15 +3,34 @@ name: api.relaton.org ingest
 # A push here changes this dataset; tell api.relaton.org to re-ingest
 # this flavor. The receiver (repository_dispatch) lives in
 # relaton/relaton-api-js and ingests only the flavor named below.
+#
+# A push-triggered ingest races the Pages rebuild: a hand commit fires it
+# before the Deploy has republished, while the crawler's own push (which
+# lands the rebuilt index) uses the default GITHUB_TOKEN and deliberately
+# raises no workflow events — so the race was never corrected (observed
+# 2026-11-23: the API served 31 adobe documents for the morning's 52-record
+# merge). The Deploy-completion run is the authoritative trigger: it fires
+# only after Pages published, so the ingest always sees the final state.
+# The push trigger stays as the fast path.
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Deploy"]
+    types: [completed]
 
 permissions: {}
 
 jobs:
   dispatch:
+    # The workflow_run payload also fires for non-default branches and
+    # failed builds; data-deploy.yml's publish gate skips both, so neither
+    # ever changes the published index and neither may ingest.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == github.event.repository.default_branch)
     runs-on: ubuntu-latest
     steps:
       - name: Trigger ingest for this flavor
