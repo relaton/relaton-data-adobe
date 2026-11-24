@@ -44,16 +44,15 @@ RSpec.describe AdobeFetcher::Indexer do
     expect(v2).to include("5014")
   end
 
-  it "parses publication id (slug-form) for index-v2 even when docid.content uses title" do
-    # Simulate a named publication: docid.content is the title-based
-    # citation, but id is the slug. The indexer should use id (not
-    # docid.content) so Pubid::Adobe parses cleanly.
+  it "parses publication id (slug-form) for index-v2" do
+    # A named publication: docid.content is the canonical slug form,
+    # the title lives only in title.
     hash = {
       "id" => "adobe-glyph-list",
       "type" => "standard",
       "title" => [{ "language" => "eng", "content" => "Adobe Glyph List", "type" => "main" }],
       "docidentifier" => [{
-        "content" => "Adobe Publication Adobe Glyph List",
+        "content" => "Adobe Publication adobe-glyph-list",
         "type" => "ADOBE", "primary" => true,
       }],
       "ext" => { "doctype" => { "content" => "publication" }, "flavor" => "adobe" },
@@ -131,15 +130,15 @@ RSpec.describe AdobeFetcher::Indexer do
     store.write(stem, hash)
   end
 
-  # A named publication: docid.content is the title-based citation, but
-  # id is the slug that Pubid::Adobe parses for index-v2.
+  # A named publication: docid.content is the canonical slug form; the
+  # title lives only in title.
   def write_publication(slug, title)
     store.write(slug, {
       "id" => slug,
       "type" => "standard",
       "title" => [{ "language" => "eng", "content" => title, "type" => "main" }],
       "docidentifier" => [{
-        "content" => "Adobe Publication #{title}", "type" => "ADOBE", "primary" => true,
+        "content" => "Adobe Publication #{slug}", "type" => "ADOBE", "primary" => true,
       }],
       "ext" => { "doctype" => { "content" => "publication" }, "flavor" => "adobe" },
     })

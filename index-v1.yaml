@@ -1,13 +1,13 @@
 ---
 - :id: Adobe Publication acrobat-dc-font-policies
   :file: data/acrobat-dc-font-policies.yaml
-- :id: Adobe Publication Adobe-GB1-5 Character Collection for CID-Keyed Fonts
+- :id: Adobe Publication adobe-gb1-5
   :file: data/adobe-gb1-5.yaml
-- :id: Adobe Publication Adobe Glyph List for New Fonts
+- :id: Adobe Publication adobe-glyph-list-for-new-fonts
   :file: data/adobe-glyph-list-for-new-fonts.yaml
-- :id: Adobe Publication Adobe Glyph List
+- :id: Adobe Publication adobe-glyph-list
   :file: data/adobe-glyph-list.yaml
-- :id: Adobe Publication Adobe-Japan1-7 Character Collection for CID-Keyed Fonts
+- :id: Adobe Publication adobe-japan1-7
   :file: data/adobe-japan1-7.yaml
 - :id: Adobe TN 0091
   :file: data/atn0091.yaml
@@ -79,27 +79,27 @@
   :file: data/atn5901.yaml
 - :id: Adobe TN 5902
   :file: data/atn5902.yaml
-- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.0'
+- :id: Adobe Publication pdf-reference-1.0
   :file: data/pdf-reference-1.0.yaml
-- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.2'
+- :id: Adobe Publication pdf-reference-1.2
   :file: data/pdf-reference-1.2.yaml
-- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.3'
+- :id: Adobe Publication pdf-reference-1.3
   :file: data/pdf-reference-1.3.yaml
-- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.4'
+- :id: Adobe Publication pdf-reference-1.4
   :file: data/pdf-reference-1.4.yaml
-- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.5'
+- :id: Adobe Publication pdf-reference-1.5
   :file: data/pdf-reference-1.5.yaml
-- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.6'
+- :id: Adobe Publication pdf-reference-1.6
   :file: data/pdf-reference-1.6.yaml
-- :id: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version 1.7'
+- :id: Adobe Publication pdf-reference-1.7
   :file: data/pdf-reference-1.7.yaml
-- :id: Adobe Publication PDF Signature Build Dictionary Specification
+- :id: Adobe Publication pdf-signature-build-dictionary-1.4
   :file: data/pdf-signature-build-dictionary-1.4.yaml
-- :id: Adobe Publication PostScript Language Reference, Third Edition
+- :id: Adobe Publication postscript-language-reference-3.0
   :file: data/postscript-language-reference-3.0.yaml
 - :id: Adobe Publication t1-spec
   :file: data/t1-spec.yaml
-- :id: Adobe Publication TIFF, Revision 6.0
+- :id: Adobe Publication tiff-6.0
   :file: data/tiff-6.0.yaml
-- :id: Adobe Publication XML Forms Architecture (XFA) Specification
+- :id: Adobe Publication xfa-3.3
   :file: data/xfa-3.3.yaml

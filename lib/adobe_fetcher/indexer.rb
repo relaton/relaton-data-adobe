@@ -39,11 +39,11 @@ module AdobeFetcher
         end
         rel = File.expand_path(f).delete_prefix("#{base}/")
         idx.add_or_update docid.content, rel
-        # index-v2 parses the structural id (item.id) rather than the
-        # citation form (docid.content). For Adobe Publications the
-        # citation uses the title ("Adobe Publication <title>") which
-        # isn't slug-parseable; the id field is always slug/ATN-based
-        # and round-trips cleanly through Pubid::Adobe.
+        # index-v2 parses the structural id (item.id), which is always
+        # slug/ATN-based and round-trips through Pubid::Adobe. The
+        # primary docid.content is the same canonical form with the
+        # "Adobe TN " / "Adobe Publication " prefix (check_data.rb
+        # enforces that it parses back to itself).
         add_pubid(idx2, pubid_class, item.id, rel) if idx2
       rescue StandardError => e
         warn "Error processing #{f}: #{e.message}"

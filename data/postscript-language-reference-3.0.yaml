@@ -10,7 +10,7 @@ source:
 - type: website
   content: https://www.pdfa.org/norm-refs/PLRM.pdf
 docidentifier:
-- content: Adobe Publication PostScript Language Reference, Third Edition
+- content: Adobe Publication postscript-language-reference-3.0
   type: ADOBE
   primary: true
 docnumber: postscript-language-reference

@@ -10,7 +10,7 @@ source:
 - type: website
   content: https://www.pdfa.org/norm-refs/SigBuildDict.pdf
 docidentifier:
-- content: Adobe Publication PDF Signature Build Dictionary Specification
+- content: Adobe Publication pdf-signature-build-dictionary-1.4
   type: ADOBE
   primary: true
 docnumber: pdf-signature-build-dictionary

@@ -10,7 +10,7 @@ source:
 - type: website
   content: https://github.com/adobe-type-tools/cmap-resources/raw/main/other-cmaps/adobe-japan1-7.cmap
 docidentifier:
-- content: Adobe Publication Adobe-Japan1-7 Character Collection for CID-Keyed Fonts
+- content: Adobe Publication adobe-japan1-7
   type: ADOBE
   primary: true
 docnumber: adobe-japan1

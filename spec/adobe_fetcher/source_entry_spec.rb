@@ -24,11 +24,11 @@ RSpec.describe AdobeFetcher::SourceEntry do
       expect(entry.to_docid.version).to eq("7")
     end
 
-    it "passes title through to Publication Docids" do
+    it "passes title through to Publication Docids without changing the docid" do
       entry = described_class.new(slug: "adobe-glyph-list", title: "Adobe Glyph List")
       docid = entry.to_docid
       expect(docid.title).to eq("Adobe Glyph List")
-      expect(docid.to_s).to eq("Adobe Publication Adobe Glyph List")
+      expect(docid.to_s).to eq("Adobe Publication adobe-glyph-list")
     end
 
     it "raises when neither number nor slug is set" do

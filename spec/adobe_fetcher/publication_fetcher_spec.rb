@@ -32,6 +32,23 @@ RSpec.describe AdobeFetcher::PublicationFetcher do
     expect(data["docidentifier"].first["primary"]).to be(true)
   end
 
+  it "writes the canonical slug docid for a publication and keeps the title in title" do
+    publication = FakeSource.new([
+      { slug: "pdf-reference", version: "1.7",
+        title: "PDF Reference: Adobe Portable Document Format, Version 1.7" },
+    ])
+    described_class.new(
+      data_dir: data_dir, yaml_store: store, sources: [publication],
+    ).run
+
+    data = store.read("pdf-reference-1.7")
+    expect(data["id"]).to eq("pdf-reference-1.7")
+    expect(data["docidentifier"].first["content"])
+      .to eq("Adobe Publication pdf-reference-1.7")
+    expect(data["title"].first["content"])
+      .to eq("PDF Reference: Adobe Portable Document Format, Version 1.7")
+  end
+
   it "writes the Adobe ext block with urn and source_repo_path" do
     described_class.new(
       data_dir: data_dir, yaml_store: store, sources: [source],
