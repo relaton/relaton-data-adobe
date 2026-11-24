@@ -10,7 +10,7 @@ source:
 - type: website
   content: https://www.pdfa.org/norm-refs/TIFF6.pdf
 docidentifier:
-- content: Adobe Publication TIFF, Revision 6.0
+- content: Adobe Publication tiff-6.0
   type: ADOBE
   primary: true
 docnumber: tiff

@@ -41,12 +41,15 @@ remain parseable for back-compat.
 
 ### 2. Named publications — slug-keyed, untyped
 
-Cited as `Adobe Publication <title>` where `<title>` is the
-publication's actual title (e.g. `Adobe Publication Adobe Glyph List`).
-The Pubid library renders the structural form
-`Adobe Publication <slug>` (e.g. `Adobe Publication adobe-glyph-list`);
-the data repo's `AdobeFetcher::Docid` overrides `to_s` to use the
-title from metadata when available.
+The primary docidentifier is the canonical Pubid form
+`Adobe Publication <slug>[-<version>]` (e.g.
+`Adobe Publication adobe-glyph-list`, `Adobe Publication pdf-reference-1.7`)
+— always `"Adobe Publication " + id`. It must parse with
+`Pubid::Adobe.parse` and render back to itself (relaton derives the
+pubid, cache key, and api.relaton.org match from it). The
+publication's actual title (e.g. `Adobe Glyph List`) lives only in
+`title`, never in the docid. Dotted versions (`1.7`, `6.0`) need
+pubid ≥ metanorma/pubid#770.
 
 Examples drawn from the PDF/A normative-references list:
 - Adobe PostScript Language Third Edition (Feb 1999)
@@ -173,9 +176,9 @@ serialized via `Relaton::Adobe::Item`). No `File.write` outside
 `AdobeFetcher::Docid` is the single value object across both observed
 shapes: typed TechNote ids (`ATN5014`, `Adobe TN 5014`,
 `urn:adobe:tech-note:5014`) and slug-keyed Publication ids
-(`adobe-glyph-list`, `Adobe Publication Adobe Glyph List`). Parses/
-URN delegate to `Pubid::Adobe`; the title-based citation form is
-owned by Docid (presentational) so Pubid stays structural.
+(`adobe-glyph-list`, `Adobe Publication adobe-glyph-list`). Parse,
+render (`#to_s`) and URN all delegate to `Pubid::Adobe`; a `title`
+on a Docid is metadata only and never changes `#to_s`.
 
 `AdobeFetcher::SourceEntry` is the uniform entry type yielded by every
 source. Each entry knows how to build its own Docid via `#to_docid`
@@ -213,7 +216,7 @@ bundle exec adobe-fetch --pdfs                       # download/clone PDFs + OCR
 bundle exec adobe-fetch index                        # rebuild index-v1 + index-v2
 bundle exec ruby crawler.rb                          # rebuild indexes only
 bundle exec ruby check_data.rb                       # round-trip validate data/
-bundle exec rspec spec/                              # run specs (74 examples, no doubles)
+bundle exec rspec spec/                              # run specs (no doubles)
 ```
 
 ## Crawler + check_data contracts
@@ -230,7 +233,9 @@ sibling `index*.zip` (the yaml stored at its bare basename); the
 
 `check_data.rb` round-trips every YAML through
 `Relaton::Adobe::Item.from_yaml` → `to_yaml` and diffs against the
-source. Exit 1 on any byte mismatch. Adobe `ext` fields round-trip
+source. It also requires every primary docidentifier to equal the canonical
+form of the record's id (`Pubid::Adobe.parse(id).to_s`; `spec/data_spec.rb`
+asserts the same). Exit 1 on any failure. Adobe `ext` fields round-trip
 natively because they're typed on `Relaton::Adobe::Ext` — **no merge
 hack**.
 

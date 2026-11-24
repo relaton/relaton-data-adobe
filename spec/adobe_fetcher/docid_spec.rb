@@ -109,9 +109,20 @@ RSpec.describe AdobeFetcher::Docid do
         .to eq("Adobe Publication adobe-glyph-list")
     end
 
-    it "renders the Adobe Publication form with title when present" do
+    it "renders the canonical slug form even when a title is present" do
       d = described_class.from_slug("adobe-glyph-list", title: "Adobe Glyph List")
-      expect(d.to_s).to eq("Adobe Publication Adobe Glyph List")
+      expect(d.to_s).to eq("Adobe Publication adobe-glyph-list")
+    end
+
+    it "renders a dotted version in the canonical form" do
+      d = described_class.from_slug("pdf-reference", version: "1.7",
+                                    title: "PDF Reference, Version 1.7")
+      expect(d.to_s).to eq("Adobe Publication pdf-reference-1.7")
+    end
+
+    it "renders a form that Pubid::Adobe parses back to itself" do
+      d = described_class.from_slug("tiff", version: "6.0", title: "TIFF, Revision 6.0")
+      expect(Pubid::Adobe.parse(d.to_s).to_s).to eq(d.to_s)
     end
 
     it "includes the version suffix for versioned publications without title" do

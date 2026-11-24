@@ -10,7 +10,7 @@ source:
 - type: website
   content: https://raw.githubusercontent.com/adobe-type-tools/agl-aglfn/main/aglfn.txt
 docidentifier:
-- content: Adobe Publication Adobe Glyph List
+- content: Adobe Publication adobe-glyph-list
   type: ADOBE
   primary: true
 docnumber: adobe-glyph-list

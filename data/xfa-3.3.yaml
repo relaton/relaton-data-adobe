@@ -10,7 +10,7 @@ source:
 - type: website
   content: https://www.pdfa.org/norm-refs/XFA-3_3.pdf
 docidentifier:
-- content: Adobe Publication XML Forms Architecture (XFA) Specification
+- content: Adobe Publication xfa-3.3
   type: ADOBE
   primary: true
 docnumber: xfa

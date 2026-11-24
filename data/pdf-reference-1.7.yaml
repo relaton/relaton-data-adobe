@@ -10,8 +10,7 @@ source:
 - type: website
   content: https://raw.githubusercontent.com/adobe/dc-acrobat-sdk-docs/master/docs/pdfstandards/pdfreference1.7old.pdf
 docidentifier:
-- content: 'Adobe Publication PDF Reference: Adobe Portable Document Format, Version
-    1.7'
+- content: Adobe Publication pdf-reference-1.7
   type: ADOBE
   primary: true
 docnumber: pdf-reference

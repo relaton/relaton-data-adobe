@@ -10,7 +10,7 @@ source:
 - type: website
   content: https://github.com/adobe-type-tools/cmap-resources/raw/main/other-cmaps/adobe-gb1-5.cmap
 docidentifier:
-- content: Adobe Publication Adobe-GB1-5 Character Collection for CID-Keyed Fonts
+- content: Adobe Publication adobe-gb1-5
   type: ADOBE
   primary: true
 docnumber: adobe-gb1

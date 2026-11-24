@@ -6,8 +6,8 @@ module AdobeFetcher
   # in the orchestrator) and exposes the optional location fields
   # (filename, absolute_path, web_url, bytes_url) with nil defaults.
   #
-  # For Publications, the optional +title+ rides along so the
-  # resulting Docid can render "Adobe Publication <title>" citations.
+  # For Publications, the optional +title+ rides along as metadata; the
+  # Docid always renders the canonical "Adobe Publication <slug>" form.
   class SourceEntry
     attr_reader :number, :slug, :version, :title, :date, :filename,
                 :absolute_path, :web_url, :bytes_url, :source_repo_path
@@ -33,7 +33,7 @@ module AdobeFetcher
     # (number present vs slug present), not on entry class — the
     # invariant is that a tech-note entry always has `number` and a
     # publication entry always has `slug`. The +title+ is forwarded
-    # onto Publication Docids so #to_s can render the citation form.
+    # onto Publication Docids as metadata only.
     def to_docid
       if number
         AdobeFetcher::Docid.from_tech_note_number(number, slug: slug)

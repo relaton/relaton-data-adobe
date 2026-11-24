@@ -11,8 +11,8 @@ module AdobeFetcher
   #   * short alias            — "ATN5014" (id field, parseable)
   #   * filename-derived       — "5014.CIDFont_Spec.pdf"
   #   * publication slug       — "adobe-glyph-list", "adobe-japan1-7"
-  #   * publication citation   — "Adobe Publication Adobe Glyph List"
-  #                               (uses the title from metadata)
+  #   * publication docid      — "Adobe Publication adobe-glyph-list",
+  #                               "Adobe Publication pdf-reference-1.7"
   #   * URN                    — "urn:adobe:tech-note:5014"
   #
   # Two flavours of Docid exist:
@@ -21,11 +21,11 @@ module AdobeFetcher
   #               Pubid::Adobe.
   #   * generic — slug-keyed Publication. URN generation supported via
   #               Pubid::Adobe (different namespace). Carries an
-  #               optional +title+ for the human citation form.
+  #               optional +title+ as metadata; it does not change the
+  #               docid.
   #
-  # The object is a thin wrapper over Pubid::Adobe for parse/URN
-  # concerns; it owns the data-repo-specific filename, id, and
-  # title-based citation rendering.
+  # The object is a thin wrapper over Pubid::Adobe for parse/render/URN
+  # concerns; it owns the data-repo-specific filename and id.
   class Docid
     attr_reader :code, :typed, :doctype, :slug, :version, :title
 
@@ -91,10 +91,9 @@ module AdobeFetcher
 
     # Builds a Docid by delegating to Pubid::Adobe for parsing. The
     # returned Docid carries the canonical code (number-prefixed for
-    # TechNotes, slug for Publications). The title-form citation
-    # ("Adobe Publication Adobe Glyph List") is NOT round-trippable via
-    # pubid — the parser only accepts the slug form. Use +from_slug+
-    # with +title:+ if you need to attach a title.
+    # TechNotes, slug for Publications). The parser accepts only the
+    # slug form, never a title. Use +from_slug+ with +title:+ if you
+    # need to attach a title.
     def self.from_string(str)
       id = Pubid::Adobe.parse(str)
       case id
@@ -109,15 +108,12 @@ module AdobeFetcher
 
     # --- Derived forms ---
 
-    # The docidentifier.content string for relaton — the human-readable
-    # citation form. For TechNotes, delegates to Pubid::Adobe
-    # ("Adobe TN <number>"). For Publications, uses the title from
-    # metadata when available ("Adobe Publication <title>"), falling
-    # back to the slug-based Pubid rendering.
+    # The primary docidentifier.content string for relaton — the
+    # canonical Pubid::Adobe rendering, which parses back to itself:
+    # "Adobe TN <number>" for TechNotes, "Adobe Publication
+    # <slug>[-<version>]" for Publications. The title never enters the
+    # docid; it lives in the record's +title+.
     def to_s
-      return pubid.to_s if typed
-      return "Adobe Publication #{title}" if title
-
       pubid.to_s
     end
 
