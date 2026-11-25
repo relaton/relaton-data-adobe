@@ -22,6 +22,12 @@ module AdobeFetcher
       AGLFN_RAW =
         "https://raw.githubusercontent.com/adobe-type-tools/agl-aglfn/main".freeze
       CMAP_URL = "https://github.com/adobe-type-tools/cmap-resources".freeze
+      # The landing page the citing documents give for the PDF
+      # specifications they hold no other copy of. It is an HTML page, so
+      # it is a web_url only: a bytes_url to it would make `--pdfs`
+      # download HTML as a PDF.
+      PDF_ARCHIVE_URL =
+        "https://pdfa.org/resource/pdf-specification-archive/".freeze
 
       # The notes: number, slug (the norm-refs filename stem where one
       # exists), title, date, canonical link.
@@ -67,7 +73,9 @@ module AdobeFetcher
         },
       ].freeze
 
-      # The named specifications: slug, version, title, date, link.
+      # The named specifications: slug, version, title, date, link
+      # (bytes_url, which is also the web_url unless the entry gives
+      # its own web_url).
       PUBLICATIONS = [
         {
           slug: "postscript-language-reference", version: "3.0",
@@ -113,6 +121,27 @@ module AdobeFetcher
           title: "Adobe-GB1-5 Character Collection for CID-Keyed Fonts",
           bytes_url: "#{CMAP_URL}/raw/main/other-cmaps/adobe-gb1-5.cmap",
         },
+        # No pdfreference1.1.pdf in adobe/dc-acrobat-sdk-docs (checked
+        # 2026-11-25), so PdfStandards cannot yield it; the title takes
+        # the siblings' form. Date: the spec-pdf-core bibliography.
+        {
+          slug: "pdf-reference", version: "1.1",
+          title: "#{PdfStandards::TITLE}, Version 1.1",
+          date: "1996-01-23",
+          web_url: PDF_ARCHIVE_URL,
+        },
+        # The edition the citing documents name (spec-ea-pdf): BaseVersion
+        # 1.7, ExtensionLevel 5, Acrobat SDK 9.1, June 2009. The
+        # ExtensionLevel is the version. The slug keeps "iso32000" in one
+        # segment: pubid reads an all-digit trailing segment as the
+        # version ("adobe-supplement-iso-32000" → version 32000).
+        {
+          slug: "adobe-supplement-iso32000", version: "5",
+          title: "Adobe Supplement to the ISO 32000, BaseVersion 1.7, " \
+                 "ExtensionLevel 5",
+          date: "2009-06",
+          web_url: PDF_ARCHIVE_URL,
+        },
       ].freeze
 
       def each_entry
@@ -131,7 +160,7 @@ module AdobeFetcher
           yield SourceEntry.new(
             slug: p[:slug], version: p[:version], title: p[:title],
             date: p[:date],
-            web_url: url, bytes_url: url,
+            web_url: p.fetch(:web_url, url), bytes_url: url,
           )
         end
       end
