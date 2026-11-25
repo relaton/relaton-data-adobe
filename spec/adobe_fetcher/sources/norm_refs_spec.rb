@@ -20,11 +20,44 @@ RSpec.describe AdobeFetcher::Sources::NormRefs do
     expect(entries.map(&:slug)).to eq([
       "postscript-language-reference", "pdf-signature-build-dictionary",
       "tiff", "xfa", "adobe-glyph-list", "adobe-glyph-list-for-new-fonts",
-      "adobe-japan1", "adobe-gb1",
+      "adobe-japan1", "adobe-gb1", "pdf-reference", "adobe-supplement-iso32000",
     ])
     xfa = entries.find { |e| e.slug == "xfa" }
     expect(xfa.version).to eq("3.3")
     expect(xfa.title).to include("XML Forms Architecture")
+    expect(xfa.web_url).to eq(xfa.bytes_url)
+  end
+
+  describe "the publications with no crawlable copy" do
+    let(:archive) { "https://pdfa.org/resource/pdf-specification-archive/" }
+    let(:entries) { described_class.new.each_entry.to_a }
+
+    it "curates PDF Reference 1.1 in the form of the PdfStandards siblings" do
+      pdf11 = entries.find { |e| e.slug == "pdf-reference" }
+
+      expect(pdf11.to_docid.to_s).to eq("Adobe Publication pdf-reference-1.1")
+      expect(pdf11.title)
+        .to eq("PDF Reference: Adobe Portable Document Format, Version 1.1")
+      expect(pdf11.date).to eq("1996-01-23")
+      expect(pdf11.bytes_url).to be_nil
+      expect(pdf11.web_url).to eq(archive)
+    end
+
+    it "curates the ExtensionLevel 5 Supplement under a non-numeric slug" do
+      supplement = entries.find { |e| e.slug == "adobe-supplement-iso32000" }
+      id = supplement.to_docid.to_s
+      pubid = Pubid::Adobe.parse(id)
+
+      expect(id).to eq("Adobe Publication adobe-supplement-iso32000-5")
+      expect(pubid.to_s).to eq(id)
+      expect([pubid.slug, pubid.version]).to eq(["adobe-supplement-iso32000", "5"])
+      expect(supplement.title).to eq(
+        "Adobe Supplement to the ISO 32000, BaseVersion 1.7, ExtensionLevel 5",
+      )
+      expect(supplement.date).to eq("2009-06")
+      expect(supplement.bytes_url).to be_nil
+      expect(supplement.web_url).to eq(archive)
+    end
   end
 
   it "round-trips every entry through its Docid" do

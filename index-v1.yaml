@@ -9,6 +9,8 @@
   :file: data/adobe-glyph-list.yaml
 - :id: Adobe Publication adobe-japan1-7
   :file: data/adobe-japan1-7.yaml
+- :id: Adobe Publication adobe-supplement-iso32000-5
+  :file: data/adobe-supplement-iso32000-5.yaml
 - :id: Adobe TN 0091
   :file: data/atn0091.yaml
 - :id: Adobe TN 5001
@@ -81,6 +83,8 @@
   :file: data/atn5902.yaml
 - :id: Adobe Publication pdf-reference-1.0
   :file: data/pdf-reference-1.0.yaml
+- :id: Adobe Publication pdf-reference-1.1
+  :file: data/pdf-reference-1.1.yaml
 - :id: Adobe Publication pdf-reference-1.2
   :file: data/pdf-reference-1.2.yaml
 - :id: Adobe Publication pdf-reference-1.3

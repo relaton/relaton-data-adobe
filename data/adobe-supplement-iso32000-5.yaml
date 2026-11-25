@@ -1,0 +1,46 @@
+---
+id: adobe-supplement-iso32000-5
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: Adobe Supplement to the ISO 32000, BaseVersion 1.7, ExtensionLevel 5
+  type: main
+docidentifier:
+- content: Adobe Publication adobe-supplement-iso32000-5
+  type: ADOBE
+  primary: true
+docnumber: adobe-supplement-iso32000
+date:
+- type: published
+  from: 2009-06
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '2009'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:adobe-supplement-iso32000:v5
+  webpage: https://pdfa.org/resource/pdf-specification-archive/
+  publication_slug: adobe-supplement-iso32000

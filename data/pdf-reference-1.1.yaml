@@ -1,0 +1,46 @@
+---
+id: pdf-reference-1.1
+schema_version: v1.5.6
+type: standard
+title:
+- language: eng
+  content: 'PDF Reference: Adobe Portable Document Format, Version 1.1'
+  type: main
+docidentifier:
+- content: Adobe Publication pdf-reference-1.1
+  type: ADOBE
+  primary: true
+docnumber: pdf-reference
+date:
+- type: published
+  from: '1996-01-23'
+contributor:
+- role:
+  - type: publisher
+  organization:
+    name:
+    - content: Adobe Systems Incorporated
+    abbreviation:
+      content: Adobe
+language:
+- eng
+script:
+- Latn
+status:
+  stage:
+    content: in-force
+copyright:
+- from: '1996'
+  owner:
+  - organization:
+      name:
+      - content: Adobe Systems Incorporated
+      abbreviation:
+        content: Adobe
+ext:
+  doctype:
+    content: publication
+  flavor: adobe
+  urn: urn:adobe:publication:pdf-reference:v1.1
+  webpage: https://pdfa.org/resource/pdf-specification-archive/
+  publication_slug: pdf-reference
